@@ -1005,7 +1005,7 @@ if (generateAiBtn) {
         // =================================
 
         const response = await fetch(
-          "http://localhost:5000/api/breakdown",
+          "https://taskbreakdown.onrender.com/api/breakdown",
           {
             method: "POST",
 
