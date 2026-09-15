@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Project — TaskBreak</title>
+
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="Css/project.css"
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            Task<span>Break</span>
+        </div>
+
+        <a href="index.html" class="back-btn">
+            ← All Projects
+        </a>
+
+    </header>
+
+
+    <main class="project-container">
+
+        <!-- Project Header -->
+
+        <section class="project-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    PROJECT
+                </p>
+
+                <h1 id="projectName">
+                    Loading...
+                </h1>
+
+                <p id="projectDescription">
+                    Loading project...
+                </p>
+
+            </div>
+
+            <div class="project-progress">
+
+                <div class="progress-circle">
+
+                    <strong id="progressPercent">
+                        0%
+                    </strong>
+
+                </div>
+
+                <span>Progress</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- Tasks -->
+
+        <section class="tasks-section">
+
+            <div class="tasks-header">
+
+                <div>
+
+                    <h2>Tasks</h2>
+
+                    <p id="taskSummary">
+                        0 tasks
+                    </p>
+
+                </div>
+
+                <div class="task-actions">
+                    <button class="breakdown-btn" id="breakdownBtn">
+                        ⚡ Break Down Project
+                    </button>
+
+                    <button class="new-project-btn" id="addTaskBtn">
+                        + Add Task
+                    </button>
+                </div>
+
+            </div>
+
+
+            <!-- Task List -->
+
+            <div id="taskList">
+
+                <!-- Tasks will appear here -->
+
+            </div>
+            <div class="download-pdf-container">
+                <button class="download-btn" id="downloadPdfBtn">
+                    ↓ Download Project PDF
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Add Task Modal -->
+
+    <div class="modal" id="taskModal">
+
+        <div class="modal-box">
+
+            <button class="close-modal" id="closeModal">
+                ×
+            </button>
+
+            <p class="eyebrow">
+                NEW TASK
+            </p>
+
+            <h2>Add a task</h2>
+
+            <form id="taskForm">
+
+                <div class="form-group">
+
+                    <label for="taskName">
+                        Task Name
+                    </label>
+
+                    <input type="text" id="taskName" placeholder="e.g. Design homepage" required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="taskCategory">
+                        Category
+                    </label>
+
+                    <select id="taskCategory">
+
+                        <option value="Planning">
+                            Planning
+                        </option>
+
+                        <option value="Design">
+                            Design
+                        </option>
+
+                        <option value="Development">
+                            Development
+                        </option>
+
+                        <option value="Testing">
+                            Testing
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="taskPriority">
+                        Priority
+                    </label>
+
+                    <select id="taskPriority">
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option value="Medium" selected>
+                            Medium
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button type="submit" class="create-btn">
+                    Add Task
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Breakdown Modal -->
+
+    <div class="modal" id="breakdownModal">
+
+        <div class="modal-box breakdown-box">
+
+            <button class="close-modal" id="closeBreakdown">
+                ×
+            </button>
+
+            <p class="eyebrow">
+                PROJECT BREAKDOWN
+            </p>
+
+            <h2>
+                How do you want to break it down?
+            </h2>
+
+            <p class="breakdown-description">
+                Start with a ready-made template or
+                generate a custom breakdown with AI.
+            </p>
+
+
+            <div class="breakdown-options">
+
+                <!-- Template -->
+
+                <button class="breakdown-option" id="templateOption">
+
+                    <div class="breakdown-option-icon">
+                        📋
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Use a Template
+                        </h3>
+
+                        <p>
+                            Start with a predefined project structure.
+                        </p>
+
+                    </div>
+
+                    <span>→</span>
+
+                </button>
+
+
+                <!-- AI -->
+
+                <button class="breakdown-option" id="aiOption">
+
+                    <div class="breakdown-option-icon">
+                        ✨
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            AI Breakdown
+                        </h3>
+
+                        <p>
+                            Generate tasks based on your project.
+                        </p>
+
+                    </div>
+
+                    <span>→</span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Template Modal -->
+
+    <div class="modal" id="templateModal">
+
+        <div class="modal-box">
+
+            <button class="close-modal" id="closeTemplate">
+                ×
+            </button>
+
+            <p class="eyebrow">
+                TEMPLATES
+            </p>
+
+            <h2>
+                Choose a template
+            </h2>
+
+            <div class="template-grid">
+
+                <button class="template-card" data-template="website">
+                    <span>🌐</span>
+                    <strong>Website</strong>
+                    <small>Web development</small>
+                </button>
+
+
+                <button class="template-card" data-template="mobile">
+                    <span>📱</span>
+                    <strong>Mobile App</strong>
+                    <small>App development</small>
+                </button>
+
+
+                <button class="template-card" data-template="design">
+                    <span>🎨</span>
+                    <strong>Design Project</strong>
+                    <small>Creative work</small>
+                </button>
+
+
+                <button class="template-card" data-template="marketing">
+                    <span>📣</span>
+                    <strong>Marketing</strong>
+                    <small>Marketing campaign</small>
+                </button>
+
+
+                <button class="template-card" data-template="college">
+                    <span>📚</span>
+                    <strong>College Project</strong>
+                    <small>Academic project</small>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- AI Breakdown Modal -->
+
+    <div class="modal" id="aiModal">
+
+        <div class="modal-box ai-box">
+
+            <button class="close-modal" id="closeAi">
+                ×
+            </button>
+
+            <p class="eyebrow">
+                AI PROJECT BREAKDOWN
+            </p>
+
+            <h2>
+                Turn your project into tasks
+            </h2>
+
+            <p class="breakdown-description">
+                AI will analyze your project and create
+                a practical task breakdown.
+            </p>
+
+
+            <!-- Project Preview -->
+
+            <div class="ai-project-preview">
+
+                <div class="ai-preview-label">
+                    PROJECT
+                </div>
+
+                <h3 id="aiProjectName">
+                    Project Name
+                </h3>
+
+                <p id="aiProjectDescription">
+                    Project description
+                </p>
+
+            </div>
+
+
+            <!-- Breakdown Detail -->
+
+            <div class="form-group">
+
+                <label for="aiDetail">
+                    Breakdown Detail
+                </label>
+
+                <select id="aiDetail">
+
+                    <option value="simple">
+                        Simple
+                    </option>
+
+                    <option value="detailed" selected>
+                        Detailed
+                    </option>
+
+                    <option value="very-detailed">
+                        Very Detailed
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Generate Button -->
+
+            <button class="create-btn" id="generateAiBtn">
+                ✨ Generate Breakdown
+            </button>
+            <div class="ai-results" id="aiResults">
+
+                <div class="ai-results-header">
+
+                    <div>
+                        <p class="eyebrow">
+                            AI GENERATED TASKS
+                        </p>
+
+                        <h3>
+                            Your project breakdown
+                        </h3>
+                    </div>
+
+                </div>
+
+                <div class="ai-task-list" id="aiTaskList">
+                    <!-- AI generated tasks will appear here -->
+                </div>
+
+                <button class="create-btn" id="addAiTasksBtn">
+                    + Add Selected Tasks
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

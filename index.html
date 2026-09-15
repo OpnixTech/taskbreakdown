@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskBreak — Project Manager</title>
+
+    <link rel="stylesheet" href="/Css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+
+        <div class="logo">
+            Task<span>Break</span>
+        </div>
+
+        <a href="create-project.html" class="new-project-btn">
+            + New Project
+        </a>
+
+    </header>
+
+
+    <!-- Main -->
+    <main class="container">
+
+        <section class="hero">
+
+            <div>
+                <p class="eyebrow">PROJECT MANAGEMENT</p>
+
+                <h1>
+                    Break big projects<br>
+                    into small tasks.
+                </h1>
+
+                <p class="hero-text">
+                    Plan your work, organize tasks and track
+                    your progress from one simple dashboard.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Projects -->
+        <section class="projects-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Your Projects</h2>
+                    <p>Continue working on your projects.</p>
+                </div>
+
+                <span class="project-count" id="projectCount">
+
+                </span>
+
+            </div>
+
+
+            <div class="projects-grid">
+
+                <!-- Project Card -->
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Projects will be loaded here by JavaScript -->
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
